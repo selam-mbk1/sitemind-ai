@@ -1,9 +1,9 @@
-#Sitemind-AI
+# Sitemind-AI
 
 Sitemind-AI is a modern AI-powered chatbot web application integrated with a knowledge base. Using Retrieval-Augmented Generation (RAG), it provides context-aware, accurate responses from PDFs, text files, and website content. Users can manage documents, interact with the chatbot, and review chat history in a secure environment.
 
-##Features
-###Authentication & Authorization
+## Features
+### Authentication & Authorization
 
 Secure user registration and login (email/username & password)
 
@@ -11,7 +11,7 @@ JWT and session-based authentication
 
 Only authenticated users can access chat and document management
 
-###AI Chatbot (RAG-Powered)
+### AI Chatbot (RAG-Powered)
 
 Context-aware responses from uploaded documents
 
@@ -19,7 +19,7 @@ Supports PDFs and text files
 
 Maintains conversation history per user
 
-###Knowledge Base Management
+### Knowledge Base Management
 
 Upload and manage PDFs, text documents, or website content
 
@@ -27,7 +27,7 @@ Automatic text extraction and embedding generation
 
 Only authenticated users can manage documents
 
-###Chat Interface
+### Chat Interface
 
 Modern, clean, responsive UI
 
@@ -35,19 +35,19 @@ Floating chat widget with real-time message streaming
 
 Typing indicators for user-friendly interaction
 
-###Chat History
+### Chat History
 
 Stores chat sessions securely in the database
 
 Users can view previous conversations and resume chats
 
-###other
+### other
 
 AI-augmented development with Groq API
 
 Future-ready deployment on serverless platforms (Vercel, Railway, AWS Amplify)
 
-##Tech Stack
+## Tech Stack
 
 Frontend: HTML5, CSS3, Tailwind CSS, JavaScript, React (optional for SPA)
 
@@ -63,27 +63,27 @@ Document Processing: PDF & text parsing with automatic embeddings
 
 Deployment: Vercel / Railway / AWS Amplify (optional)
 
-##Installation
+## Installation
 
-###Clone the repository
+### Clone the repository
 
 git clone https://github.com/your-username/sitemind-ai.git
 cd sitemind-ai
 
 
-###Create a virtual environment
+### Create a virtual environment
 
 python -m venv venv
 venv\Scripts\activate       # Windows
 source venv/bin/activate    # Linux / macOS
 
 
-###Install dependencies
+### Install dependencies
 
 pip install -r requirements.txt
 
 
-###Create a .env file in the project root with your keys:
+### Create a .env file in the project root with your keys:
 
 SECRET_KEY=your_django_secret_key
 DEBUG=True
@@ -94,20 +94,20 @@ VOYAGE_API_KEY=your_voyage_api_key
 GROQ_API_KEY=your_groq_api_key
 
 
-###Run migrations
+### Run migrations
 
 python manage.py migrate
 
 
-###Start the development server
+### Start the development server
 
 python manage.py runserver
 
 
-###Open your browser at:
+### Open your browser at:
 http://127.0.0.1:8000
 
-##Folder Structure
+## Folder Structure
 sitemind_ai/
 ├── accounts/           # User authentication & management
 ├── chat/               # Chatbot & chat history
@@ -120,7 +120,7 @@ sitemind_ai/
 ├── venv/               # Python virtual environment
 └── .env                # Environment variables (not tracked in Git)
 
-##Usage
+## Usage
 
 Register or log in as a user.
 
@@ -132,7 +132,7 @@ Chatbot retrieves relevant content using RAG embeddings.
 
 Access chat history to view and resume previous sessions.
 
-##Contributing
+## Contributing
 
 Fork the repository.
 
@@ -144,6 +144,6 @@ Push to the branch: git push origin feature-name
 
 Open a Pull Request.
 
-##License
+## License
 
 This project is licensed under the MIT License 
