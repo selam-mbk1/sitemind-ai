@@ -1,0 +1,33 @@
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="min-h-screen bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+  <div class="bg-white p-10 rounded-2xl shadow-xl w-96">
+    <h1 class="text-2xl font-bold mb-4 text-center">AI Assistant</h1>
+    <div id="chat-box" class="h-60 overflow-y-auto border p-2 mb-3"></div>
+    <input id="user-input" class="w-full border p-2 rounded mb-2" placeholder="Ask something...">
+    <button onclick="sendMessage()" class="w-full bg-indigo-600 text-white p-2 rounded">
+      Send
+    </button>
+  </div>
+</div>
+
+<script>
+async function sendMessage(){
+    let input = document.getElementById("user-input");
+    let message = input.value;
+    const token = "YOUR_JWT_TOKEN";
+
+    let response = await fetch("/chat/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + token
+        },
+        body: JSON.stringify({message: message})
+    });
+    let data = await response.json();
+    document.getElementById("chat-box").innerHTML +=
+      "<div><b>You:</b> " + message + "</div>" +
+      "<div><b>AI:</b> " + data.answer + "</div>";
+}
+</script>

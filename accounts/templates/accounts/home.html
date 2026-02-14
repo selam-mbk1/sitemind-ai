@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | SiteMind AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* 1. High Contrast Mesh: Darker overlay to help text pop */
+        .bg-mesh {
+            background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), 
+                        linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+        }
+
+        /* 2. Enhanced Glass: Darker navy tint for maximum text visibility */
+        .glass-hero {
+            background: rgba(15, 23, 42, 0.7); /* Deep Slate/Navy Glass */
+            backdrop-blur: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+        }
+
+        /* 3. Text Visibility Hack: Subtle shadow for every letter */
+        .text-pop {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-mesh min-h-screen flex flex-col items-center justify-center p-6">
+
+    <div class="mb-10 text-center">
+        <div class="inline-block p-4 rounded-3xl bg-white/10 backdrop-blur-xl mb-6 shadow-2xl border border-white/20">
+            <span class="text-5xl">🧠</span>
+        </div>
+        <h1 class="text-6xl font-black text-white tracking-tighter text-pop">
+            SiteMind <span class="text-blue-300">AI</span>
+        </h1>
+        <p class="text-white mt-3 text-xl font-bold opacity-100 text-pop">
+            Your Documents. Your Context. <span class="text-blue-200">Optimized.</span>
+        </p>
+    </div>
+
+    <div class="animate-float glass-hero rounded-[2.5rem] p-12 max-w-lg w-full text-center relative overflow-hidden">
+        
+        <div class="absolute -top-24 -left-24 w-48 h-48 bg-purple-600/40 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-blue-600/40 rounded-full blur-3xl"></div>
+
+        <h2 class="text-3xl font-black text-white mb-3 relative text-pop tracking-tight">Access Engine</h2>
+        <p class="text-white/90 font-medium mb-10 relative text-pop">Securely connect to your RAG-powered environment.</p>
+
+        {% if messages %}
+            <div class="mb-8 space-y-3">
+                {% for message in messages %}
+                    <div class="bg-red-500/30 border border-red-400/50 backdrop-blur-xl text-white px-4 py-3 rounded-2xl text-sm font-bold flex items-center justify-center">
+                        <span class="mr-2 text-lg">⚠️</span> {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="flex flex-col space-y-5 relative">
+            <a href="{% url 'accounts:login' %}" 
+               class="group relative flex items-center justify-center bg-white text-slate-900 font-black py-5 px-8 rounded-2xl transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] shadow-xl text-lg">
+                <span>Login to Workspace</span>
+                <svg class="w-6 h-6 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+
+            <a href="{% url 'accounts:register' %}" 
+               class="bg-white/10 hover:bg-white/20 border-2 border-white/40 text-white font-black py-5 px-8 rounded-2xl transition-all duration-300 backdrop-blur-sm text-lg text-pop">
+                Initialize Account
+            </a>
+        </div>
+
+        <div class="mt-10 pt-8 border-t border-white/15">
+            <p class="text-xs text-white/60 uppercase font-black tracking-[0.2em] text-pop">Neural Processing Unit • Online</p>
+        </div>
+    </div>
+
+    <div class="mt-12 flex space-x-8 text-white/80 text-sm font-bold text-pop">
+        <a href="#" class="hover:text-white transition underline decoration-blue-400/40 underline-offset-4">Privacy Architecture</a>
+        <span>•</span>
+        <a href="#" class="hover:text-white transition underline decoration-blue-400/40 underline-offset-4">Kernel Support</a>
+    </div>
+
+</body>
+</html>
