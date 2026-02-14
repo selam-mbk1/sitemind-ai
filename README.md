@@ -39,7 +39,7 @@ Typing indicators for user-friendly interaction
 
 Stores chat sessions securely in the database
 
-Users can view previous conversations and resume chats
+Users can view previous conversations 
 
 ### other
 
